@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'com.techcasita.ask'
+version '1.0'
+war.archiveName = 'pm.war'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+
+    compile group: 'com.amazon.alexa', name: 'ask-sdk-core', version: '2.6.0'
+    compile group: 'com.amazon.alexa', name: 'ask-sdk-servlet-support', version: '2.6.0'
+    //  Logger
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.1'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.1'
+    // testing
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
