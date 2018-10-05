@@ -44,6 +44,10 @@ public class IsPrimeHandler implements RequestHandler {
         final Map<String, Slot> slots = intent.getSlots();
         final Slot numberSlot = slots.get(NUMBER_SLOT);
 
+        // final Session session = input.getRequestEnvelope().getSession(); // carefull .. serialization into JSON
+        // final Context cxt = input.getRequestEnvelope().getContext(); // client hardware device info
+        // final DialogState state = intentRequest.getDialogState(); //  in multi turn dialog e.g. COMPLETED
+
         String speechText = TXT.getString("dnk" + new Random().nextInt(4));
         Template t = Layout.T6("red0", speechText);
 
